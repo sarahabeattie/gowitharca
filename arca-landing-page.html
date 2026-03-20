@@ -83,10 +83,11 @@
       display: flex; align-items: center; gap: 2rem;
     }
     nav .nav-links a {
-      color: rgba(225,225,225,0.7); font-size: 0.75rem;
+      color: var(--gunmetal); font-size: 0.75rem;
       letter-spacing: 0.2em; text-transform: uppercase;
-      text-decoration: none; transition: color 0.3s;
+      text-decoration: none; transition: color 0.5s;
     }
+    nav.scrolled .nav-links a { color: rgba(225,225,225,0.7); }
     nav .nav-links a:hover { color: var(--rose-gold-light); }
     nav .nav-links .nav-text { display: none; }
     nav .nav-links .ig-link { color: var(--gunmetal); display:flex; transition: color 0.5s; }
