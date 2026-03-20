@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "public": true,
+  "builds": [{ "src": "arca-landing-page.html", "use": "@vercel/static" }],
+  "routes": [{ "src": "/", "dest": "/arca-landing-page.html" }]
+}
