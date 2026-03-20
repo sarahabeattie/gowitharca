@@ -75,9 +75,10 @@
     }
     nav .logo {
       font-family: 'Cormorant Garamond', serif;
-      color: var(--seasalt); font-size: 1.5rem; letter-spacing: 0.15em;
-      font-weight: 300; text-decoration: none;
+      color: var(--gunmetal); font-size: 1.5rem; letter-spacing: 0.15em;
+      font-weight: 300; text-decoration: none; transition: color 0.5s;
     }
+    nav.scrolled .logo { color: var(--seasalt); }
     nav .nav-links {
       display: flex; align-items: center; gap: 2rem;
     }
@@ -88,7 +89,8 @@
     }
     nav .nav-links a:hover { color: var(--rose-gold-light); }
     nav .nav-links .nav-text { display: none; }
-    nav .nav-links .ig-link { color: rgba(225,225,225,0.7); display:flex; }
+    nav .nav-links .ig-link { color: var(--gunmetal); display:flex; transition: color 0.5s; }
+    nav.scrolled .nav-links .ig-link { color: rgba(225,225,225,0.7); }
     nav .nav-links .ig-link:hover { color: var(--rose-gold-light); }
 
     /* HERO */
@@ -114,6 +116,7 @@
       color: var(--rose-gold); font-size: 0.875rem;
       letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem;
       animation-delay: 0.2s;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.5);
     }
     .hero h1 {
       color: var(--seasalt); font-size: clamp(3rem, 8vw, 6rem);
@@ -200,8 +203,17 @@
     }
     .values .grid {
       max-width: 80rem; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      display: grid; grid-template-columns: repeat(5, 1fr);
       gap: 2rem;
+    }
+    @media (max-width: 1023px) {
+      .values .grid {
+        display: flex; flex-wrap: wrap; justify-content: center;
+      }
+      .value-card {
+        flex: 0 0 calc(33.333% - 1.5rem);
+        min-width: 160px;
+      }
     }
     .value-card {
       text-align: center;
